@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Название страницы</title>
+</head>
+<body>
+<canvas id = 'canvas' style= 'width: 350px; height: 500px; background-color: #cebeff;
+                              position:relative; '></canvas>
+<button id = 'click'>click</button>
+<button id = 'clear'>clear</button>
+<p id = 'p'>0</p>
+<script>
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+let rect = canvas.getBoundingClientRect();
+let scale = window.devicePixelRatio;
+canvas.width = rect.width * scale;
+canvas.height = rect.height * scale;
+ctx.scale(scale,scale)
+let scores = 0;
+document.getElementById('click').addEventListener("click", ()=>{
+    scores++;
+    document.getElementById('p').innerHTML = scores;
+    document.getElementById('clear').addEventListener('click',()=>   {
+
+        let ctx = canvas.getContext('2d');
+        let rect = canvas.getBoundingClientRect();
+        let scale = window.devicePixelRatio;
+        canvas.width = rect.width * scale;
+        canvas.height = rect.height * scale;
+        ctx.scale(scale,scale)
+        // canvas.width = canvas.width;
+// // Сохраняем текущую матрицу трансформации
+//         ctx.save();
+// // Используем идентичную матрицу трансформации на время очистки
+//         ctx.setTransform(1, 0, 0, 1, 0, 0);
+//         ctx.clearRect(0, 0, canvas.width, canvas.height);
+// Возобновляем матрицу трансформации
+//         ctx.restore();
+
+        scores =0;
+    });
+switch (scores) {
+    case 1:
+        ctx.lineWidth = 3;
+        ctx.moveTo(25, 450);
+        ctx.lineTo(75, 450);
+        ctx.moveTo(50, 450);
+        ctx.lineTo(50, 50);
+        ctx.lineTo(250, 50);
+        ctx.moveTo(120, 50);
+        ctx.lineTo(50, 120);
+        ctx.stroke();
+        break;
+    case 2:
+        ctx.lineWidth = 1;
+        ctx.moveTo(250, 50);
+        ctx.lineTo(250, 120);
+        ctx.stroke();
+        break;
+    case 3:
+
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(250, 145, 25, 0, 2 * Math.PI);
+        ctx.stroke();
+        break;
+    case 4:
+        ctx.moveTo(250, 170);
+        ctx.lineTo(250, 280);
+        ctx.stroke();
+        break;
+    case 5:
+        ctx.moveTo(250, 180);
+        ctx.lineTo(200, 240);
+        ctx.stroke();
+        break;
+    case 6:
+        ctx.moveTo(250, 180);
+        ctx.lineTo(300, 240);
+        ctx.stroke();
+        break;
+    case 7:
+        ctx.moveTo(250, 280);
+        ctx.lineTo(200, 340);
+        ctx.stroke();
+        break;
+    case 8:
+        ctx.moveTo(250, 280);
+        ctx.lineTo(300, 340);
+        ctx.stroke();
+        ctx.lineWidth = 1;
+        ctx.moveTo(243, 135);
+        ctx.lineTo(237, 145);
+        ctx.stroke();
+        ctx.moveTo(237, 135);
+        ctx.lineTo(243, 145);
+        ctx.stroke();
+        ctx.moveTo(263, 135);
+        ctx.lineTo(257, 145);
+        ctx.stroke();
+        ctx.moveTo(255, 135);
+        ctx.lineTo(265, 145);
+        ctx.stroke();
+        ctx.moveTo(256, 157);
+        ctx.lineTo(246, 160);
+        ctx.stroke();
+        scores = 0;
+}
+})
+</script>
+
+</body>
+</html>

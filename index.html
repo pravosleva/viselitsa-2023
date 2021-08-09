@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
+</head>
+
+<body>
+<div id="popUpOverlay">
+    <div id='GameOverPopUp'>
+        <p id='GameOverPopUpContent'> Эх... :C</p>
+        <div class = 'buttonsPopUp'>
+        <button id='newWordBtnWhenGameOver'>Новое слово &#8679</button>
+        <button id='escapeWhenGameOver'>Выйти из игры</button>
+        </div>
+    </div>
+    <div id='popUpWin'><p id='popUpWinContent'> Так держать! </p>
+        <div class = 'buttonsPopUp'>
+        <button id='newWordBtnWhenPlayerWin'>Новое слово &#8679</button>
+        <button id='escapeWhenPlayerWin'>Выйти из игры</button>
+        </div>
+    </div>
+</div>
+<div id='container'>
+
+
+
+    <button id='exitButton'> &#8678 Выйти</button>
+    <canvas id='canvas'></canvas>
+    <button id='btnGenarateId'>Начать игру &#10157</button>
+    <br>
+    <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg">
+
+    <div id='fieldForQuestion' class="startPage"></div>
+    <br>
+    <div id='scoresField'> Промахи: <p id='scores'></p></div>
+    <div id='fieldForAnswer' class='wordWhenPlayerNotWin'></div>
+    <br>
+
+    <div id="alphabetId">
+
+    </div>
+
+</div>
+<script src="./script.js"></script>
+
+</body>
+
+</html>
