@@ -1,3 +1,31 @@
+// // const requestURL = 'http://localhost:63342/script.js/index.html?_ijt=ku9abma2ulpe9ph00no415j0ne';
+// // const xhr = new XMLHttpRequest();
+// // xhr.open('GET', requestURL);
+// // xhr.send();
+// const mysql = require('mysql');
+// const conn = mysql.createConnection({
+//     host: "server.mysql.tools",
+//     user: "root",
+//     database: "test_database",
+//     password: "XXXYYY"
+// });
+// conn.connect(function (err) {
+//     if (err) {
+//         return console.error("Ошибка: " + err.message);
+//     }
+//     else {
+//         console.log("Подключение к серверу MySQL успешно установлено");
+//     }
+// });
+//
+// let query="SELECT * FROM user";
+//
+// conn.query(query, (err, result, field) =>{
+//     console.log(err);
+//     console.log(result);
+//     // console.log(field);
+// });
+
 let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 let task = ''; //rename
 let arrayAlphabet = [];
