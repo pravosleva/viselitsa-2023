@@ -4,48 +4,67 @@
 <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2@11.6.16.all.min.css" media="screen"/>
+    <script src="./js/utils/DeepProxy.js"></script>
+    <script src="./js/utils/takeFromLS.js"></script>
+    <script src="./js/utils/possibleFinishImgSrcs.js"></script>
+    <script src="./js/utils/httpClient/1-fetchRetry.js"></script>
+    <script src="./js/utils/httpClient/2-httpClient.js"></script>
+    <script src="./js/utils/sweetalert2@11.6.16.all.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.17.0/sweetalert2.all.min.js"></script> -->
 </head>
 
 <body>
 
-<div id="popUpOverlay">
+<div id="popUpOverlay" class="backdrop-blur">
     <div id='GameOverPopUp'>
-        <p id='GameOverPopUpContent'> Эх... :C</p>
+        <p id='GameOverPopUpContent'>Эх... :C</p>
+        <div class='end-img-wrapper'>
+          <img id="end-img-fail" class="end-img" src='images/fail-2-carrey.jpeg' alt='fail' />
+        </div>
         <div class = 'buttonsPopUp'>
-        <button id='newWordBtnWhenGameOver'>Новое слово &#8679</button>
-        <button id='escapeWhenGameOver'>Выйти из игры</button>
+          <button id='newWordBtnWhenGameOver'>Новое слово &#8679</button>
+          <button id='escapeWhenGameOver'>Выйти из игры</button>
         </div>
     </div>
-    <div id='popUpWin'><p id='popUpWinContent'> Так держать! </p>
+    <div id='popUpWin'>
+        <p id='popUpWinContent'>👍 Так держать!</p>
+        <div class='end-img-wrapper'>
+          <img id="end-img-success" class="end-img" src='images/success-dicaprio-2.gif' alt='fail' />
+        </div>
         <div class = 'buttonsPopUp'>
-        <button id='newWordBtnWhenPlayerWin'>Новое слово &#8679</button>
-        <button id='escapeWhenPlayerWin'>Выйти из игры</button>
+          <button id='newWordBtnWhenPlayerWin'>Новое слово &#8679</button>
+          <button id='escapeWhenPlayerWin'>Выйти из игры</button>
         </div>
     </div>
 </div>
 <div id='container'>
-
-
-
     <button id='exitButton'> &#8678 Выйти</button>
-    <canvas id='canvas'></canvas>
-    <button id='btnGenarateId'>Начать игру &#10157</button>
-    <br>
-    <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg">
+    <div id='canvas-wrapper'>
+      <canvas id='canvas' class='backdrop-blur'></canvas>
+      <div id='canvas-wrapper-toggler' class='backdrop-blur'>Open</div>
+    </div>
+    
+    <button id='btnGenarateId' class='sp-none'>Начать игру &#10157</button>
+    <br />
+
+    <h1 id='nameOfTheGame'>ВИСЕЛИЦА</h1>
+    <!-- <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg" /> -->
 
     <div id='fieldForQuestion' class="startPage"></div>
-    <br>
+    <br />
     <div id='scoresField'> Промахи: <p id='scores'></p></div>
     <div id='fieldForAnswer' class='wordWhenPlayerNotWin'></div>
-    <br>
+    <br />
 
-    <div id="alphabetId">
+    <div id="alphabetId"></div>
 
-    </div>
-
+    <div id="possible-itens-counter" class='fixed-bottom-elm'></div>
+    <div id="create-new-item-btn" class='fixed-bottom-elm'>&plus;</div> <!-- sp-none -->
+    <div id="reset-items-btn" class='fixed-bottom-elm'>&times;</div>
 </div>
-<script src="./script.js"></script>
+<script src="./js/main.js"></script>
 
 </body>
 

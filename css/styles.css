@@ -2,6 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Indie+Flower&display=swap');
 
+:root {
+  --space-1: 30px;
+  --color-blue: #2196F3;
+  --color-green: #32c192;
+  --color-red: #f85e54;
+}
+
 html {
     width: 100%;
     height: 100%;
@@ -14,11 +21,11 @@ body {
     height: 100%;
     font-family: 'Amatic SC', cursive;
     overflow: hidden;
-
+    margin: 0px;
+    padding: 0px;
 }
 
 #container {
-
     position: relative;
     text-align: center;
     display: inline-block;
@@ -26,8 +33,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-
-
 }
 
 #scores {
@@ -61,7 +66,7 @@ body {
     top: 45%;
     margin: 0 auto;
     cursor: url(images/cursorPointerrr.svg), pointer;
-    background: #8460e7;
+    background: #2196F3;
     padding: 6px 12px;
     color: white;
     font-family: 'Amatic SC', cursive;
@@ -76,8 +81,8 @@ body {
 
 #btnGenarateId:hover {
     background: #ffffff;
-    color: #8460e7;
-    box-shadow: 0 5px 20px rgb(132, 96, 231);
+    color: #2196F3;
+    box-shadow: 0 5px 20px rgb(33, 150, 243);
 }
 
 /*.changeStyleBtnGenerate{*/
@@ -89,17 +94,21 @@ body {
 /*}*/
 
 #nameOfTheGame {
-    display: inline-block;
+    display: block;
     position: relative;
-    margin: 0 auto;
     cursor: url(images/cursorDefaulttt.svg), default;
-    width: 550px;
-    margin-top: 70px;
+    background-position: center;
+    width: 100%;
+    max-width: 550px;
+    margin: 70px auto 0 auto;
     transition-duration: 1s;
+    font-size: 8em;
+    text-shadow: 1px 1px 2px #f85e54;
+    color: var(--color-green);
 }
 
 #nameOfTheGame:hover {
-    width: 580px;
+    scale: 1.1;
 }
 
 #fieldForAnswer {
@@ -123,24 +132,30 @@ body {
 #alphabetId {
 
     color: #fff;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     top: calc(50% - 100px);
     left: 0;
     right: 0;
     margin: 0 auto;
 
+    padding: 0 var(--space-1);
+    box-sizing: border-box;
+
 }
 
 .afterSelectedWrongLetter {
-    color: red !important;
+    color: #fe5850 !important;
+    opacity: 0.2;
 }
 
 .afterSelectedRightLetter {
     color: green !important;
+    opacity: 0.2;
 }
 
 .selectWrongLetter {
-    color: red;
+    color: #fe5850;
     font-size: 42px;
     padding: 13px;
     background: transparent;
@@ -162,7 +177,7 @@ body {
 }
 
 #GameOverPopUpContent {
-    margin: 15% auto;
+    margin: 10% auto;
     color: black;
     width: 80%;
     font-size: 32px;
@@ -172,8 +187,9 @@ body {
 #popUpWin, #GameOverPopUp {
 
     background-color: #ffffff;
-    width: 450px;
-    height: 250px;
+    width: 100%;
+    max-width: 450px;
+    /* height: 250px; */
     text-align: center;
     border: none;
     display: none;
@@ -183,8 +199,10 @@ body {
     left: 0;
     right: 0;
     margin: 0 auto;
-    top: calc(50% - 150px);
-    box-shadow: 0 3px 20px rgb(132, 96, 231);
+    /* top: calc(50% - 150px); */
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 20px rgba(33, 150, 243, 0.35);
     cursor: url(images/cursorDefaulttt.svg), default;
 
 }
@@ -196,11 +214,11 @@ body {
     margin: 0 auto;
     position: fixed;
     display: none;
-    box-shadow: 0 3px 20px rgb(132, 96, 231);
+    box-shadow: 0 3px 20px rgba(33, 150, 243, 0.35);
 }
 
 #popUpWinContent {
-    margin: 15% auto;
+    margin: 10% auto;
     color: black;
     width: 80%;
     font-size: 32px;
@@ -237,7 +255,7 @@ body {
 
 #newWordBtnWhenGameOver, #newWordBtnWhenPlayerWin {
     cursor: url(images/cursorPointerrr.svg), pointer;
-    background: #8460e7;
+    background: #2196F3;
     padding: 5px 15px;
     color: white;
     font-family: 'Amatic SC', cursive;
@@ -251,13 +269,13 @@ body {
 
 #newWordBtnWhenGameOver:hover, #newWordBtnWhenPlayerWin:hover {
     background: #ffffff;
-    color: #8460E7;
+    color: #2196F3;
 }
 
 #escapeWhenGameOver, #escapeWhenPlayerWin{
     cursor: url(images/cursorPointerrr.svg), pointer;
     background: transparent;
-    color: #8460E7;
+    color: #2196F3;
     font-family: 'Amatic SC', cursive;
     font-size: 22px;
     border: none;
@@ -267,16 +285,15 @@ body {
 }
 #escapeWhenGameOver:hover, #escapeWhenPlayerWin:hover{
     font-size: 23px;
-    color: #4f1be3;
+    color: #2196f3;
 }
 .buttonsPopUp{
-    margin: 0 auto;
+    margin: 0 auto 10% auto;
 }
 #exitButton {
     cursor: url(images/cursorPointerrr.svg), pointer;
     background: transparent;
-    margin: 50px 90px;
-    color: #8460E7;
+    color: #2196F3;
     font-family: 'Amatic SC', cursive;
     font-size: 24px;
     border: none;
@@ -287,20 +304,183 @@ body {
     display: none;
 
 }
+@media(max-width: 767px) {
+  #exitButton {
+    margin: 10px 10px;
+  }
+}
+@media(min-width: 768px) {
+  #exitButton {
+    margin: 50px 90px;
+  }
+}
 
 #exitButton:hover {
     font-size: 26px;
-    color: #4f1be3;
+    color: #2196f3;
 }
 
 
+#canvas-wrapper {
+  box-sizing: border-box;
+  position: absolute;
+  margin-top: 70px;
+
+  /* border: 1px solid #fe5850; */
+  /*
+  margin-left: 10px;
+  margin-right: 170px;
+  display: none;
+  */
+  display: flex;
+
+  transition: all 0.5s linear;
+  z-index: 2;
+}
+@media(max-width: 767px) {
+  #canvas-wrapper {
+    margin-left: 0px;
+    transform: translateX(-350px);
+  }
+}
+@media(min-width: 768px) {
+  #canvas-wrapper {
+    margin-left: var(--space-1);
+    transform: translateX(calc(-350px - var(--space-1)));
+  }
+}
+#canvas-wrapper.opened {
+  transform: translateX(calc(0px));
+}
 #canvas {
-    width: 350px;
-    height: 500px;
-    position: absolute;
-    margin-top: 70px;
-    margin-left: 60px;
-    margin-right: 170px;
-    display: none;
-    background: transparent;
+  box-sizing: border-box;
+  width: 350px;
+  height: 500px;
+
+  background: transparent;
+  z-index: 2;
+}
+@media(max-width: 767px) {
+  #canvas {
+    border: 1px solid lightgray;
+    border-right-color: transparent;
+    border-radius: 0px;
+  }
+}
+@media(min-width: 768px) {
+  #canvas {
+    border: 2px solid lightgray;
+    border-right-color: transparent;
+    border-radius: 20px 0 0 20px;
+  }
+}
+#canvas-wrapper-toggler {
+  /* border: 1px dashed #fe5850; */
+  background-color: rgba(254, 88, 80, 0.35);
+  width: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0 20px 20px 0;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  cursor: pointer;
+}
+
+@media(max-width: 767px) {
+  #canvas-wrapper {
+    margin-top: 120px;
+  }
+}
+@media(min-width: 768px) {
+  #canvas-wrapper {
+    margin-top: 170px;
+  }
+}
+
+/* slightly transparent fallback */
+.backdrop-blur {
+  background-color: rgba(255, 255, 255, .8);
+}
+.backdrop-blur-#fe5850 {
+  background-color: rgba(255, 255, 255, .8);
+}
+
+/* if backdrop support: very transparent and blur#fe5850 */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .backdrop-blur {
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(0.3em);
+    backdrop-filter: blur(0.3em);
+  }
+}
+
+.end-img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+.end-img {
+  border-radius: 8px;
+  max-width: calc(100% - 20px);
+  max-height: 220px;
+}
+
+.fixed-bottom-elm {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  font-family: Muli;
+}
+
+#possible-itens-counter {
+  border: 2px solid var(--color-blue);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+#create-new-item-btn {
+  cursor: pointer;
+  border: 2px solid var(--color-green);
+  position: fixed;
+  bottom: 10px;
+  right: 50px;
+  color: #FFF;
+  background-color: var(--color-green);
+}
+#reset-items-btn {
+  cursor: pointer;
+  border: 2px solid var(--color-red);
+  position: fixed;
+  bottom: 10px;
+  right: 90px;
+  color: #FFF;
+  background-color: var(--color-red);
+}
+
+.sp-none {
+  display: none;
+}
+
+.swal2-popup {
+  border-radius: 20px !important;
+}
+
+.swal2-actions button,
+.swal2-modal input,
+.swal2-modal textarea {
+  border-radius: 20px !important;
+}
+.swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
+  background: rgba(255,255,255,.8) !important;
+}
+.swal2-popup {
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 30%);
 }
