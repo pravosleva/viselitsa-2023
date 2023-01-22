@@ -22,7 +22,7 @@ const state = window.createProxiedState({
           break
         case 'possibleItems':
           // console.log(`possibleItems -> ${JSON.stringify(value)}`)
-          window.localStorage.setItem('savedPossibleItemsJSON', JSON.stringify(value))
+          window.localStorage.setItem('viselitsa2023.savedPossibleItemsJSON', JSON.stringify(value))
           document.getElementById('possible-itens-counter').innerHTML = value.length
 
           document.getElementById('btnGenarateId').classList.toggle('sp-none', value.length === 0)
@@ -76,7 +76,7 @@ let arrayOfTask = [];
 const initPossibleItemsFromLSOrCustom = () => {
   try {
     takeFromLS({
-      fieldName: 'savedPossibleItemsJSON',
+      fieldName: 'viselitsa2023.savedPossibleItemsJSON',
       defaultValue: [],
       cb: {
         onError: (e) => {
@@ -178,7 +178,7 @@ const init = ({
       },
       onFinally: () => {
         takeFromLS({
-          fieldName: 'savedPossibleItemsJSON',
+          fieldName: 'viselitsa2023.savedPossibleItemsJSON',
           defaultValue: [],
           cb: {
             onError: (_e) => {
