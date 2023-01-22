@@ -1,5 +1,40 @@
 {
+  "name": "viselitsa",
+  "version": "2.0.0",
+  "description": "Viselitsa game",
+  "main": "index.js",
+  "scripts": {
+    "deploy2:local": "yarn build && bash deploy2.local.sh",
+    "deploy2:prod": "yarn build && bash deploy2.local.sh && bash deploy2.prod.sh pravosleva",
+    "quaint-copy-custom": "rsync -r src/js/utils/sweetalert2@11.6.16.all.min.js dist.viselitsa-2023/js/sweetalert2@11.6.16.all.min.js",
+    "quaint-copy-all": " bash quaint-files-copy.sh src/ dist.viselitsa-2023/ avif && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ map && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ webp && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ wav && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ mp3 && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ jpg && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ jpeg && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ png && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ gif && bash quaint-files-copy.sh src/ dist.viselitsa-2023/ svg && yarn quaint-copy-custom",
+    "build": "GIT_SHA1=$(git show --format=\"%h\" --no-patch) NODE_ENV=production rollup -c rollup.config.js && yarn quaint-copy-all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictoriaIL/Game-Viselitsa.git"
+  },
+  "keywords": [
+    "viselitsa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pravosleva/viselitsa-2023/issues"
+  },
+  "homepage": "https://github.com/pravosleva/viselitsa-2023#readme",
   "dependencies": {
-    "mysql": "^2.18.1"
+    "rollup": "2.60.x"
+  },
+  "devDependencies": {
+    "@rollup/plugin-multi-entry": "4.1.x",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "rollup-plugin-css-bundle": "^1.0.4",
+    "rollup-plugin-es3": "^1.1.0",
+    "rollup-plugin-filesize": "^9.1.2",
+    "rollup-plugin-progress": "^1.1.2",
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }

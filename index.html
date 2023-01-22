@@ -1,52 +1,84 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Parcel Sandbox</title>
+  <head>
+    <title>🔥 ВИСЕЛИЦА 🔥</title>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#2196F3" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3EN8D5GQW"></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M3EN8D5GQW');
+    </script>
 
-<body>
-
-<div id="popUpOverlay">
-    <div id='GameOverPopUp'>
-        <p id='GameOverPopUpContent'> Эх... :C</p>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/9.17.0/sweetalert2.all.min.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="css/main.bundle.css" media="screen"/>
+    <script defer src="./js/utils.1.bundle.js"></script>
+    <script defer src="./js/sweetalert2@11.6.16.all.min.js"></script>
+  </head>
+  <body>
+    <div id="popUpOverlay" class="backdrop-blur">
+      <div id='GameOverPopUp'>
+        <p id='GameOverPopUpContent'>Эх... :C</p>
+        <div class='end-img-wrapper'>
+          <img id="end-img-fail" class="end-img" src='images/final/fail-2-carrey.jpeg' alt='fail' />
+        </div>
         <div class = 'buttonsPopUp'>
         <button id='newWordBtnWhenGameOver'>Новое слово &#8679</button>
         <button id='escapeWhenGameOver'>Выйти из игры</button>
         </div>
-    </div>
-    <div id='popUpWin'><p id='popUpWinContent'> Так держать! </p>
+      </div>
+      <div id='popUpWin'>
+        <p id='popUpWinContent'>👍 Так держать! 🎉</p>
+        <div class='end-img-wrapper'>
+          <img id="end-img-success" class="end-img" src='images/final/success-2-dicaprio.gif' alt='fail' />
+        </div>
         <div class = 'buttonsPopUp'>
         <button id='newWordBtnWhenPlayerWin'>Новое слово &#8679</button>
         <button id='escapeWhenPlayerWin'>Выйти из игры</button>
         </div>
+      </div>
     </div>
-</div>
-<div id='container'>
+    <div id='container'>
+      <button id='exitButton'>&#8678 Выйти</button>
+      <div id='canvas-wrapper'>
+        <canvas id='canvas' class='backdrop-blur'></canvas>
+        <div id='canvas-wrapper-toggler' class='backdrop-blur'>Open</div>
+      </div>
+      
+      <button id='btnGenarateId' class='sp-none'>Начать игру &#10157</button>
+      <br />
 
+      <h1 id='nameOfTheGame'>ВИСЕЛИЦА</h1>
+      <!-- <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg" /> -->
 
+      <div id='fieldForQuestion' class="startPage"></div>
+      <br />
+      <div id='scoresField'> Промахи: <p id='scores'></p></div>
+      <div id='fieldForAnswer' class='wordWhenPlayerNotWin'></div>
+      <br />
 
-    <button id='exitButton'> &#8678 Выйти</button>
-    <canvas id='canvas'></canvas>
-    <button id='btnGenarateId'>Начать игру &#10157</button>
-    <br>
-    <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg">
+      <div id="alphabetId"></div>
 
-    <div id='fieldForQuestion' class="startPage"></div>
-    <br>
-    <div id='scoresField'> Промахи: <p id='scores'></p></div>
-    <div id='fieldForAnswer' class='wordWhenPlayerNotWin'></div>
-    <br>
-
-    <div id="alphabetId">
-
+      <div id="possible-itens-counter" class='fixed-bottom-elm'></div>
+      <div id="create-new-item-btn" class='fixed-bottom-elm'>&plus;</div> <!-- sp-none -->
+      <div id="reset-items-btn" class='fixed-bottom-elm'>&times;</div>
     </div>
-
-</div>
-<script src="./script.js"></script>
-
-</body>
+    <script defer src="./js/main.bundle.js"></script>
+    <script defer>
+      /**
+      * The following event is sent when the page loads. You could
+      * wrap the event in a JavaScript function so the event is
+      * sent when the user performs some action.
+      */
+      gtag('event', 'screen_view', {
+        'app_name': 'viselitsa-2023',
+        'screen_name': 'Home'
+      });
+    </script>
+  </body>
 
 </html>
