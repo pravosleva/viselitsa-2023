@@ -639,18 +639,26 @@ function changeStyleBtnGenerate() {
     // NOTE: The viewport is at least 400 pixels wide
     document.getElementById("btnGenarateId").style.top = '85%'
     // document.getElementById("btnGenarateId").style.transform = 'none'
-    document.getElementById("btnGenarateId").style.background = 'transparent'
-    document.getElementById("btnGenarateId").style.color = '#00b7fc'
-    document.getElementById("btnGenarateId").style.boxShadow = 'none'
-    document.getElementById("btnGenarateId").style.fontSize = '30px'
+    // document.getElementById("btnGenarateId").style.background = 'transparent'
+    // document.getElementById("btnGenarateId").style.color = '#00b7fc'
+    // document.getElementById("btnGenarateId").style.boxShadow = 'none'
+    // document.getElementById("btnGenarateId").style.fontSize = '30px'
   } else {
     // NOTE: The viewport is less than 400 pixels wide
     // document.getElementById("btnGenarateId").style.bottom = '10px'
     // document.getElementById("btnGenarateId").style.background = 'transparent'
-    document.getElementById("btnGenarateId").style.color = '#00b7fc'
+    // document.getElementById("btnGenarateId").style.color = '#00b7fc'
     // document.getElementById("btnGenarateId").style.boxShadow = 'none'
     // document.getElementById("btnGenarateId").style.fontSize = '30px'
+
+    // document.getElementById("btnGenarateId").classList.toggle('rect-btn_blue', true)
+    // document.getElementById("btnGenarateId").classList.toggle('backdrop-blur', false)
+    // document.getElementById("btnGenarateId").classList.toggle('rect-btn_blue-inverted', false)
   }
+
+  document.getElementById("btnGenarateId").classList.toggle('rect-btn_blue', false)
+  document.getElementById("btnGenarateId").classList.toggle('backdrop-blur', true)
+  document.getElementById("btnGenarateId").classList.toggle('rect-btn_blue-inverted', true)
 }
 
 function clearContext() {
