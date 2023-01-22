@@ -36,37 +36,38 @@
         <div class='end-img-wrapper'>
           <img id="end-img-success" class="end-img" src='images/final/success-2-dicaprio.gif' alt='fail' />
         </div>
-        <div class = 'buttonsPopUp'>
+        <div class='buttonsPopUp'>
         <button id='newWordBtnWhenPlayerWin'>Новое слово &#8679</button>
         <button id='escapeWhenPlayerWin'>Выйти из игры</button>
         </div>
       </div>
     </div>
-    <div id='container'>
-      <button id='exitButton'>&#8678 Выйти</button>
-      <div id='canvas-wrapper'>
-        <canvas id='canvas' class='backdrop-blur'></canvas>
-        <div id='canvas-wrapper-toggler' class='backdrop-blur'>Open</div>
-      </div>
-      
-      <button id='btnGenarateId' class='sp-none'>Начать игру &#10157</button>
-      <br />
 
+    <button id='exitButton' class="backdrop-blur">&#8678 Выйти</button>
+    <div id='canvas-wrapper'>
+      <canvas id='canvas' class='backdrop-blur'></canvas>
+      <div id='canvas-wrapper-toggler' class='backdrop-blur'>Open</div>
+    </div>
+
+    <div id='container'>
       <h1 id='nameOfTheGame'>ВИСЕЛИЦА</h1>
       <!-- <img id='nameOfTheGame' src="images/ВИСЕЛИЦА.svg" /> -->
-
       <div id='fieldForQuestion' class="startPage"></div>
       <br />
       <div id='scoresField'> Промахи: <p id='scores'></p></div>
       <div id='fieldForAnswer' class='wordWhenPlayerNotWin'></div>
       <br />
-
       <div id="alphabetId"></div>
-
-      <div id="possible-itens-counter" class='fixed-bottom-elm'></div>
-      <div id="create-new-item-btn" class='fixed-bottom-elm'>&plus;</div> <!-- sp-none -->
-      <div id="reset-items-btn" class='fixed-bottom-elm'>&times;</div>
     </div>
+
+    <button id='btnGenarateId' class='sp-none backdrop-blur'>Начать игру &#10157</button>
+
+    <div class="fixed-group-right-bottom">
+      <div id="possible-items-counter" class='fixed-bottom-elm backdrop-blur'></div>
+      <div id="create-new-item-btn" class='fixed-bottom-elm backdrop-blur'>&plus;</div> <!-- sp-none -->
+      <div id="reset-items-btn" class='fixed-bottom-elm backdrop-blur'>&times;</div>
+    </div>
+    
     <script defer src="./js/main.bundle.js"></script>
     <script defer>
       /**

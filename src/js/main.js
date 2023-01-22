@@ -23,7 +23,7 @@ const state = window.createProxiedState({
         case 'possibleItems':
           // console.log(`possibleItems -> ${JSON.stringify(value)}`)
           window.localStorage.setItem('viselitsa2023.savedPossibleItemsJSON', JSON.stringify(value))
-          document.getElementById('possible-itens-counter').innerHTML = value.length
+          document.getElementById('possible-items-counter').innerHTML = value.length
 
           document.getElementById('btnGenarateId').classList.toggle('sp-none', value.length === 0)
 
@@ -224,7 +224,7 @@ document.getElementById("btnGenarateId").addEventListener("click", () => {
     clearContext();
     document.getElementById("scores").innerHTML = scores + '/8';
     document.getElementById('fieldForAnswer').className = 'wordWhenPlayerNotWin';
-    document.getElementById("btnGenarateId").innerHTML = 'Сгенерировать новое слово';
+    document.getElementById("btnGenarateId").innerHTML = '🔥 Новое слово 🔥';
     changeStyleBtnGenerate();
     document.getElementById('nameOfTheGame').style.display = 'none';
     document.getElementById('canvas').style.display = 'block';
@@ -239,7 +239,7 @@ document.getElementById("btnGenarateId").addEventListener("click", () => {
       document.getElementById("fieldForQuestion").innerHTML = task.question
       document.getElementById("fieldForQuestion").style.color = 'var(--color-green)'
     } else {
-      document.getElementById("fieldForQuestion").innerHTML = "Нет подсказки ¯\\_(ツ)_/¯"
+      document.getElementById("fieldForQuestion").innerHTML = ""
       document.getElementById("fieldForQuestion").style.color = 'var(--fbc-primary-text)'
     }
 
@@ -633,13 +633,24 @@ function generateNewWordAfterPlayerWin() {
 }
 
 function changeStyleBtnGenerate() {
-    //todo:replace by static object
-    document.getElementById("btnGenarateId").style.top = '85%';
-    document.getElementById("btnGenarateId").style.background = 'transparent';
-    document.getElementById("btnGenarateId").style.color = '#00b7fc';
-    document.getElementById("btnGenarateId").style.boxShadow = 'none';
+  //todo:replace by static object
+  const isDesktop = window.matchMedia("(min-width: 768px)").matches
+  if (isDesktop) {
+    // NOTE: The viewport is at least 400 pixels wide
+    document.getElementById("btnGenarateId").style.top = '85%'
+    // document.getElementById("btnGenarateId").style.transform = 'none'
+    document.getElementById("btnGenarateId").style.background = 'transparent'
+    document.getElementById("btnGenarateId").style.color = '#00b7fc'
+    document.getElementById("btnGenarateId").style.boxShadow = 'none'
     document.getElementById("btnGenarateId").style.fontSize = '30px'
-
+  } else {
+    // NOTE: The viewport is less than 400 pixels wide
+    // document.getElementById("btnGenarateId").style.bottom = '10px'
+    // document.getElementById("btnGenarateId").style.background = 'transparent'
+    document.getElementById("btnGenarateId").style.color = '#00b7fc'
+    // document.getElementById("btnGenarateId").style.boxShadow = 'none'
+    // document.getElementById("btnGenarateId").style.fontSize = '30px'
+  }
 }
 
 function clearContext() {
