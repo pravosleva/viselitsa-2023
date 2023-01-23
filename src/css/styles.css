@@ -65,6 +65,10 @@ body {
 .rect-btn {
   font-family: 'Amatic SC', cursive;
   transition-duration: 0.7s;
+
+  line-height: 35px;
+  border-radius: 35px;
+  padding: 2px 15px
 }
 .rect-btn_blue {
   color: #FFF;
@@ -93,10 +97,11 @@ body {
     transform: translateX(-50%);
     margin: 0 auto;
     cursor: pointer;
+    /*
     padding: 6px 12px;
+    */
     font-size: 26px;
     /* border: none; */
-    border-radius: 35px;
     box-shadow: none;
   }
   #btnGenarateId:hover {
@@ -108,7 +113,6 @@ body {
 @media(max-width: 767px) {
   #btnGenarateId {
     position: absolute;
-    border-radius: 10px;
     font-size: 26px;
     bottom: 10px;
     left: 10px;
@@ -329,7 +333,6 @@ body {
   left: 0;
   top: 0;
   display: none;
-  border-radius: 10px;
   border: 2px solid var(--color-blue);
 
   /* line-height: 35px; */

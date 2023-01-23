@@ -12,7 +12,7 @@ const state = window.createProxiedState({
   initialState,
   opts: {
     set(_target, path, value, _receiver) {
-      console.log(path.join('.'))
+      // console.log(path.join('.'))
       switch (path.join('.')) {
         case 'doneItems.ls':
           window.localStorage.setItem('savedDoneWordsJSON', JSON.stringify(value))
@@ -224,7 +224,7 @@ document.getElementById("btnGenarateId").addEventListener("click", () => {
     clearContext();
     document.getElementById("scores").innerHTML = scores + '/8';
     document.getElementById('fieldForAnswer').className = 'wordWhenPlayerNotWin';
-    document.getElementById("btnGenarateId").innerHTML = '🔥 Новое слово 🔥';
+    document.getElementById("btnGenarateId").innerHTML = 'Другое слово';
     changeStyleBtnGenerate();
     document.getElementById('nameOfTheGame').style.display = 'none';
     document.getElementById('canvas').style.display = 'block';
@@ -420,10 +420,8 @@ function checkExistsLetter(indexLetter, selectedLetter) {
             setTimeout(() => {
                 document.getElementById('popUpWin').style.display = 'block';
                 document.getElementById('popUpOverlay').style.display = 'initial';// todo:if some not work -> must be deleted!!!!!!
-            }, 1000);
+            }, 500);
         }
-
-
     });
 
 }
@@ -491,6 +489,7 @@ document.getElementById('create-new-item-btn').addEventListener('click', () => {
       input: 'text',
       title: 'Word',
       inputValue: '',
+      position: window.matchMedia("(min-width: 768px)").matches ? 'center' : 'top', // isDesktop
       allowOutsideClick: false,
       confirmButtonText: 'Next ➜',
       confirmButtonColor: 'var(--color-blue)',
@@ -595,14 +594,21 @@ document.getElementById('create-new-item-btn').addEventListener('click', () => {
 })
 
 function selectWrongLetter(indexLetter) {
-    // audioFail.load();
-    // audioFail.play();
-    window.playRandomAudio({ type: 'fail' })
-    document.getElementById(indexLetter).className = 'selectWrongLetter';
-    setTimeout(() => {
-      document.getElementById(indexLetter).className = 'letters afterSelectedWrongLetter';
-    }, 500);
-
+  // audioFail.load();
+  // audioFail.play();
+  console.log(scores)
+  switch (scores) {
+    case 6:
+      window.playRandomAudio({ type: 'beforeFail' })
+      break
+    default:
+      window.playRandomAudio({ type: 'fail' })
+      break
+  }
+  document.getElementById(indexLetter).className = 'selectWrongLetter';
+  setTimeout(() => {
+    document.getElementById(indexLetter).className = 'letters afterSelectedWrongLetter';
+  }, 500);
 }
 
 function selectRightLetter(indexLetter) {
